@@ -20,7 +20,7 @@ class DetailController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -30,7 +30,7 @@ class DetailController extends Controller
     {
         $values = $request->validate([
             'current_grade_level' => 'required|string',
-            'incoming_grade_level' => 'required|string',
+            'incoming_grade_level' => 'string',
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
             'middle_name' => 'nullable|string|max:255',

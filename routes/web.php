@@ -19,6 +19,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::post('/form_submission', [DetailController::class, 'store'])->name('form_submission');
+    
 });
 
 Route::get('/sub_form', function () {

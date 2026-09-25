@@ -14,7 +14,7 @@
 
                     <div class="overflow-x-auto">
 
-                        @foreach ($details as $detail)
+                       
                             
                         
                         <table class="min-w-full text-sm text-left border border-gray-200 dark:border-gray-700">
@@ -30,7 +30,9 @@
                                     <th class="px-4 py-3">Email</th>
                                 </tr>
                             </thead>
+                            
                             <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+                                 @foreach ($details as $detail)
                                 <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50">
                                     <td class="px-4 py-3">{{ $detail->current_grade_level }}</td>
                                     <td class="px-4 py-3">{{ $detail->incoming_grade_level }}</td>
@@ -41,11 +43,12 @@
                                     <td class="px-4 py-3">{{ $detail->contact_number }}</td>
                                     <td class="px-4 py-3">{{ $detail->email }}</td>
                                 </tr>
+                                @endforeach
                                
                             </tbody>
                         </table>
 
-                        @endforeach
+                        
                     </div>
 
                 </div>

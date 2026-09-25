@@ -22,10 +22,10 @@
                                 <select id="current_grade_level" name="current_grade_level"
                                     class="mt-1 block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
                                     <option value="">Select program</option>
-                                    <option value="BSTM">BSTM</option>
-                                    <option value="BSHM">BSHM</option>
-                                    <option value="BSBA">BSBA</option>
-                                    <option value="BSCS">BSCS</option>
+                                    <option>BSTM</option>
+                                    <option>BSHM</option>
+                                    <option>BSBA</option>
+                                    <option>BSCS</option>
                                 </select>
                             </div>
 
