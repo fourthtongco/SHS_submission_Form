@@ -13,6 +13,10 @@
                     <h3 class="text-lg font-semibold mb-4">Student Submissions</h3>
 
                     <div class="overflow-x-auto">
+
+                        @foreach ($details as $detail)
+                            
+                        
                         <table class="min-w-full text-sm text-left border border-gray-200 dark:border-gray-700">
                             <thead class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 uppercase text-xs">
                                 <tr>
@@ -28,37 +32,20 @@
                             </thead>
                             <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
                                 <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50">
-                                    <td class="px-4 py-3">Grade 10</td>
-                                    <td class="px-4 py-3">Grade 11</td>
-                                    <td class="px-4 py-3">Juan</td>
-                                    <td class="px-4 py-3">Santos</td>
-                                    <td class="px-4 py-3">Dela Cruz</td>
-                                    <td class="px-4 py-3">STEM</td>
-                                    <td class="px-4 py-3">09171234567</td>
-                                    <td class="px-4 py-3">juan@example.com</td>
+                                    <td class="px-4 py-3">{{ $detail->current_grade_level }}</td>
+                                    <td class="px-4 py-3">{{ $detail->incoming_grade_level }}</td>
+                                    <td class="px-4 py-3">{{ $detail->first_name }}</td>
+                                    <td class="px-4 py-3">{{ $detail->middle_name }}</td>
+                                    <td class="px-4 py-3">{{ $detail->last_name }}</td>
+                                    <td class="px-4 py-3">{{ $detail->preferred_strand }}</td>
+                                    <td class="px-4 py-3">{{ $detail->contact_number }}</td>
+                                    <td class="px-4 py-3">{{ $detail->email }}</td>
                                 </tr>
-                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50">
-                                    <td class="px-4 py-3">Grade 10</td>
-                                    <td class="px-4 py-3">Grade 11</td>
-                                    <td class="px-4 py-3">Maria</td>
-                                    <td class="px-4 py-3">Reyes</td>
-                                    <td class="px-4 py-3">Garcia</td>
-                                    <td class="px-4 py-3">ABM</td>
-                                    <td class="px-4 py-3">09181234567</td>
-                                    <td class="px-4 py-3">maria@example.com</td>
-                                </tr>
-                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50">
-                                    <td class="px-4 py-3">Grade 11</td>
-                                    <td class="px-4 py-3">Grade 12</td>
-                                    <td class="px-4 py-3">Pedro</td>
-                                    <td class="px-4 py-3">—</td>
-                                    <td class="px-4 py-3">Bautista</td>
-                                    <td class="px-4 py-3">HUMSS</td>
-                                    <td class="px-4 py-3">09191234567</td>
-                                    <td class="px-4 py-3">pedro@example.com</td>
-                                </tr>
+                               
                             </tbody>
                         </table>
+
+                        @endforeach
                     </div>
 
                 </div>
