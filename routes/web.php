@@ -20,14 +20,22 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::post('/form_submission', [DetailController::class, 'store'])->name('form_submission');
     
+    Route::get('/sub_form', function () {
+    return view('submission.index');
+    })->middleware(['auth', 'verified'])->name('sub_form');
+
+    Route::get('/college_form', function () {
+        return view('submission.college');
+    })->middleware(['auth', 'verified'])->name('college_form');
+
+    Route::get('/sample', function () {
+        return view('submission.index2');
+    })->middleware(['auth', 'verified'])->name('index2');
+
 });
 
-Route::get('/sub_form', function () {
-    return view('submission.index');
-})->middleware(['auth', 'verified'])->name('sub_form');
 
-Route::get('/college_form', function () {
-    return view('submission.college');
-})->middleware(['auth', 'verified'])->name('college_form');
+
+
 
 require __DIR__.'/auth.php';
