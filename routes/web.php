@@ -14,6 +14,12 @@ Route::get('/dashboard', function () {
     return view('dashboard', compact('details'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/dashboard2', function () {
+    $details = Detail::all();
+    return view('collegedashboard', compact('details'));
+})->middleware(['auth', 'verified'])->name('dashboard2');
+
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

@@ -1,1 +1,1 @@
-<img src="{{ asset('images/port.png') }}" style="width:100px; height:50px;"alt="OLOPSC Logo" {{ $attributes }}>
+<img src="{{ asset('images/olopsc2.png') }}" style="width:50px; height:50px;"alt="OLOPSC Logo" {{ $attributes }}>

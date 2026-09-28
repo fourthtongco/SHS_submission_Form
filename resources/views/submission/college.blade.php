@@ -17,19 +17,33 @@
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div>
                                 <label for="current_grade_level" class="block font-medium text-sm text-gray-700 dark:text-gray-300">
-                                    Current Program
+                                    Current Year
                                 </label>
                                 <select id="current_grade_level" name="current_grade_level"
                                     class="mt-1 block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
-                                    <option value="">Select program</option>
-                                    <option>BSTM</option>
-                                    <option>BSHM</option>
-                                    <option>BSBA</option>
-                                    <option>BSCS</option>
+                                    <option value="">Select Program</option>
+                                    <option>Freshman</option>
+                                    <option>First Year</option>
+                                    <option>Second Year</option>
+                                    <option>Third Year</option>
+                                    <option>Fourth Year</option>
+                                    <option>Graduating</option>
                                 </select>
                             </div>
 
-                            
+                            <div>
+                                <label for="incoming_grade_level" class="block font-medium text-sm text-gray-700 dark:text-gray-300">
+                                    Incoming Year Level
+                                </label>
+                                <select id="incoming_grade_level" name="incoming_grade_level"
+                                    class="mt-1 block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
+                                    <option value="">Select grade level</option>
+                                    <option>Second Year</option>
+                                    <option>Third Year</option>
+                                    <option>Fourth Year</option>
+                                    <option>Graduating</option>
+                                </select>
+                            </div>
                         </div>
 
                         {{-- Name --}}
