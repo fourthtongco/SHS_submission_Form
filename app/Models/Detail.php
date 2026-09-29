@@ -17,5 +17,8 @@ class Detail extends Model
         'preferred_strand',
         'contact_number',
         'email',
+        'grade_level_code',
+        'created_at',
+        'updated_at',
     ];         
 }

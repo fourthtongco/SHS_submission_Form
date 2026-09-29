@@ -78,6 +78,7 @@
                     <table class="min-w-full text-sm text-left">
                         <thead class="bg-gray-50 dark:bg-gray-700/60 text-gray-600 dark:text-gray-300 uppercase text-xs tracking-wider">
                             <tr>
+                                <th class="px-6 py-3">ID</th>
                                 <th class="px-6 py-3">Student</th>
                                 <th class="px-6 py-3">Current Grade</th>
                                 <th class="px-6 py-3">Incoming Grade</th>
@@ -108,6 +109,7 @@
                                     class="odd:bg-white even:bg-gray-50/60 dark:odd:bg-gray-800 dark:even:bg-gray-800/60 hover:bg-indigo-50/60 dark:hover:bg-gray-700/50 transition">
 
                                     {{-- Student (avatar + name) --}}
+                                    <td class="px-6 py-4 text-gray-700 dark:text-gray-300 whitespace-nowrap">{{ $detail->id }}</td>
                                     <td class="px-6 py-4">
                                         <div class="flex items-center gap-3">
                                             <div class="flex items-center justify-center w-10 h-10 rounded-full bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 font-semibold text-sm">
@@ -135,7 +137,7 @@
                                     <td class="px-6 py-4">
                                         <div class="flex items-center justify-center gap-1">
                                             {{-- view --}}
-                                            <a href="#" title="View"
+                                            <a href="{{ route('view', $detail->id) }}" title="View"
                                                class="p-2 rounded-md text-gray-500 hover:text-indigo-600 hover:bg-indigo-50 dark:hover:bg-gray-700 transition">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                                                     <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />

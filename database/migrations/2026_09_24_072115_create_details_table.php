@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('preferred_strand');
             $table->string('contact_number');
             $table->string('email');
+            $table->string('grade_level_code');
             $table->timestamps();
         });
     }

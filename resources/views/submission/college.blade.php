@@ -12,7 +12,8 @@
 
                     <form action="/form_submission" method="POST" class="space-y-6">
                        @csrf 
-
+                        
+                       <input type="hidden" name="grade_level_code" value="2">
                         {{-- Grade Levels --}}
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div>
@@ -81,11 +82,10 @@
                             <select id="preferred_strand" name="preferred_strand"
                                 class="mt-1 block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
                                 <option value="">Select a strand</option>
-                                <option>STEM</option>
-                                <option>ABM</option>
-                                <option>HUMSS</option>
-                                <option>GAS</option>
-                                <option>TVL</option>
+                                <option>BSTM</option>
+                                <option>BSCS</option>
+                                <option>BSHM</option>
+                                <option>BSBA</option>
                             </select>
                         </div>
 

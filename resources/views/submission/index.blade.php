@@ -12,7 +12,7 @@
 
                     <form action="/form_submission" method="POST" class="space-y-6">
                        @csrf 
-
+                        
                         {{-- Grade Levels --}}
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div>
@@ -99,6 +99,7 @@
                                 </label>
                                 <input id="email" name="email" type="email"
                                     class="mt-1 block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
+                                    <input type="hidden" name="grade_level_code" value="1">
                             </div>
                         </div>
 
