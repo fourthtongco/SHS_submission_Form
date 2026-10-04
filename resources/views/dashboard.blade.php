@@ -31,29 +31,43 @@
                     </div>
                     <div>
                         <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">Total Submissions</p>
-                        <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $details->count() }}</p>
+                        <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $details->total() }}</p>
                     </div>
                 </div>
 
                 <div class="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg p-5 border-l-4 border-blue-500">
                     <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">STEM</p>
-                    <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $details->where('preferred_strand', 'STEM')->count() }}</p>
+                    <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $stem }}</p>
                 </div>
 
                 <div class="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg p-5 border-l-4 border-emerald-500">
                     <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">ABM</p>
-                    <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $details->where('preferred_strand', 'ABM')->count() }}</p>
+                    <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $abm }}</p>
                 </div>
 
                 <div class="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg p-5 border-l-4 border-amber-500">
                     <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">HUMSS</p>
-                    <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $details->where('preferred_strand', 'HUMSS')->count() }}</p>
+                    <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $humss }}</p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg p-5 border-l-4 border-rose-500">
+                    <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">GAS</p>
+                    <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $gas }}</p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg p-5 border-l-4 border-violet-500">
+                    <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">ICT-TECHPRO</p>
+                    <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $ict_techpro }}</p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg p-5 border-l-4 border-pink-500">
+                    <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">TVL</p>
+                    <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $tvl }}</p>
                 </div>
             </div>
 
             {{-- Table card --}}
-            <div x-data="{ search: '' }"
-                 class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
 
                 {{-- Card header: title + search --}}
                 <div class="p-6 border-b border-gray-200 dark:border-gray-700 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -62,15 +76,15 @@
                         <p class="text-sm text-gray-500 dark:text-gray-400">Senior High School applicants</p>
                     </div>
 
-                    <div class="relative w-full sm:w-72">
+                    <form method="GET" action="{{ route('dashboard') }}" class="relative w-full sm:w-72">
                         <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                             </svg>
                         </span>
-                        <input x-model="search" type="text" placeholder="Search name, strand, email..."
+                        <input type="text" name="search" value="{{ request('search') }}" placeholder="Search name, strand, email..."
                             class="w-full pl-10 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm text-sm">
-                    </div>
+                    </form>
                 </div>
 
                 {{-- Table --}}
@@ -105,8 +119,7 @@
                                     };
                                 @endphp
 
-                                <tr x-show="$el.textContent.toLowerCase().includes(search.toLowerCase())"
-                                    class="odd:bg-white even:bg-gray-50/60 dark:odd:bg-gray-800 dark:even:bg-gray-800/60 hover:bg-indigo-50/60 dark:hover:bg-gray-700/50 transition">
+                                <tr class="odd:bg-white even:bg-gray-50/60 dark:odd:bg-gray-800 dark:even:bg-gray-800/60 hover:bg-indigo-50/60 dark:hover:bg-gray-700/50 transition">
 
                                     {{-- Student (avatar + name) --}}
                                     <td class="px-6 py-4 text-gray-700 dark:text-gray-300 whitespace-nowrap">{{ $detail->id }}</td>
@@ -165,8 +178,12 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="7" class="px-6 py-12 text-center text-gray-500 dark:text-gray-400">
-                                        Wala pang submissions.
+                                    <td colspan="8" class="px-6 py-12 text-center text-gray-500 dark:text-gray-400">
+                                        @if (request('search'))
+                                            Walang nahanap para sa "<strong>{{ request('search') }}</strong>".
+                                        @else
+                                            Wala pang submissions.
+                                        @endif
                                     </td>
                                 </tr>
                             @endforelse
@@ -176,7 +193,10 @@
 
                 {{-- Footer --}}
                 <div class="px-6 py-4 border-t border-gray-200 dark:border-gray-700 text-sm text-gray-500 dark:text-gray-400">
-                    Total: {{ $details->count() }} {{ Str::plural('submission', $details->count()) }}
+                    Total: {{ $details->total() }} {{ Str::plural('submission', $details->total()) }}
+                </div>
+                <div class="px-6 py-4 border-t border-gray-200 dark:border-gray-700">
+                    {{ $details->links() }}
                 </div>
             </div>
 

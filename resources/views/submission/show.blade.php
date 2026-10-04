@@ -1,3 +1,13 @@
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+            {{ __('SHS Submission Form') }}
+        </h2>
+    </x-slot>
+
+    <div class="py-12">
+        <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
+
             {{-- Details card --}}
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6">
@@ -60,10 +70,10 @@
 
                 {{-- Footer actions --}}
                 <div class="px-6 py-4 bg-gray-50 dark:bg-gray-900/40 border-t border-gray-200 dark:border-gray-700 flex justify-end gap-3">
-                    <a href="{{ route('submissions.edit', $detail) }}"
+                    {{-- <a href="{{ route('edit', $detail->id) }}"
                        class="inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md font-semibold text-xs text-gray-700 dark:text-gray-300 uppercase tracking-widest shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 transition">
                         Edit
-                    </a>
+                    </a> --}}
                     <form method="POST" action="{{ route('submissions.destroy', $detail) }}"
                           onsubmit="return confirm('Sigurado ka bang buburahin ito?')">
                         @csrf
@@ -75,3 +85,7 @@
                     </form>
                 </div>
             </div>
+
+        </div>
+    </div>
+</x-app-layout>

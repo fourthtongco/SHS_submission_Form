@@ -31,34 +31,64 @@
                     </div>
                     <div>
                         <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">Total</p>
-                        <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $details->count() }}</p>
+                        <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $details->total() }}</p>
                     </div>
                 </div>
 
-                <div class="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg p-5 border-l-4 border-sky-500">
-                    <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">BSTM</p>
-                    <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $details->where('preferred_strand', 'BSTM')->count() }}</p>
+               <div class="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg p-5 border-l-4 border-rose-500">
+                    <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">AB-ENG</p>
+                    <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $abeng }}</p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg p-5 border-l-4 border-amber-500">
+                    <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">ACT</p>
+                    <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $act }}</p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg p-5 border-l-4 border-lime-500">
+                    <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">BEED</p>
+                    <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $beed }}</p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg p-5 border-l-4 border-emerald-500">
+                    <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">BSBA-HRM</p>
+                    <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $bsbahrm }}</p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg p-5 border-l-4 border-teal-500">
+                    <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">BSCS</p>
+                    <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $bscs }}</p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg p-5 border-l-4 border-cyan-500">
+                    <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">BSED</p>
+                    <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $bsed }}</p>
                 </div>
 
                 <div class="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg p-5 border-l-4 border-orange-500">
                     <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">BSHM</p>
-                    <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $details->where('preferred_strand', 'BSHM')->count() }}</p>
+                    <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $bshm }}</p>
                 </div>
 
-                <div class="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg p-5 border-l-4 border-emerald-500">
-                    <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">BSBA</p>
-                    <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $details->where('preferred_strand', 'BSBA')->count() }}</p>
+                <div class="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg p-5 border-l-4 border-indigo-500">
+                    <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">BSMM</p>
+                    <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $bsmm }}</p>
                 </div>
 
-                <div class="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg p-5 border-l-4 border-purple-500">
-                    <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">BSCS</p>
-                    <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $details->where('preferred_strand', 'BSCS')->count() }}</p>
+                <div class="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg p-5 border-l-4 border-fuchsia-500">
+                    <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">BSPSY</p>
+                    <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $bspsy }}</p>
                 </div>
+
+                <div class="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg p-5 border-l-4 border-sky-500">
+                    <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">BSTM</p>
+                    <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $bstm }}</p>
+                </div>
+
             </div>
 
             {{-- Table card --}}
-            <div x-data="{ search: '' }"
-                 class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
 
                 {{-- Card header: title + search --}}
                 <div class="p-6 border-b border-gray-200 dark:border-gray-700 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -67,15 +97,15 @@
                         <p class="text-sm text-gray-500 dark:text-gray-400">College applicants</p>
                     </div>
 
-                    <div class="relative w-full sm:w-72">
+                    <form method="GET" action="{{ route('dashboard2') }}" class="relative w-full sm:w-72">
                         <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                             </svg>
                         </span>
-                        <input x-model="search" type="text" placeholder="Search name, program, email..."
+                        <input type="text" name="search" value="{{ request('search') }}" placeholder="Search name, program, email..."
                             class="w-full pl-10 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm text-sm">
-                    </div>
+                    </form>
                 </div>
 
                 {{-- Table --}}
@@ -97,17 +127,22 @@
                                     $initials = strtoupper(substr($detail->first_name, 0, 1) . substr($detail->last_name, 0, 1));
                                     $fullName = trim($detail->first_name . ' ' . $detail->middle_name . ' ' . $detail->last_name);
 
-                                    $badge = match ($detail->current_grade_level) {
-                                        'BSTM'  => 'bg-sky-100 text-sky-700 dark:bg-sky-900/40 dark:text-sky-300',
-                                        'BSHM'  => 'bg-orange-100 text-orange-700 dark:bg-orange-900/40 dark:text-orange-300',
-                                        'BSBA'  => 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300',
-                                        'BSCS'  => 'bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300',
-                                        default => 'bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300',
+                                    $badge = match ($detail->preferred_strand) {
+                                        'AB-ENG'   => 'bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-300',
+                                        'ACT'      => 'bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300',
+                                        'BEED'     => 'bg-lime-100 text-lime-700 dark:bg-lime-900/40 dark:text-lime-300',
+                                        'BSBA-HRM' => 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300',
+                                        'BSCS'     => 'bg-teal-100 text-teal-700 dark:bg-teal-900/40 dark:text-teal-300',
+                                        'BSED'     => 'bg-cyan-100 text-cyan-700 dark:bg-cyan-900/40 dark:text-cyan-300',
+                                        'BSHM'     => 'bg-orange-100 text-orange-700 dark:bg-orange-900/40 dark:text-orange-300',
+                                        'BSMM'     => 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300',
+                                        'BSPSY'    => 'bg-fuchsia-100 text-fuchsia-700 dark:bg-fuchsia-900/40 dark:text-fuchsia-300',
+                                        'BSTM'     => 'bg-sky-100 text-sky-700 dark:bg-sky-900/40 dark:text-sky-300',
+                                        default    => 'bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300',
                                     };
                                 @endphp
 
-                                <tr x-show="$el.textContent.toLowerCase().includes(search.toLowerCase())"
-                                    class="odd:bg-white even:bg-gray-50/60 dark:odd:bg-gray-800 dark:even:bg-gray-800/60 hover:bg-indigo-50/60 dark:hover:bg-gray-700/50 transition">
+                                <tr class="odd:bg-white even:bg-gray-50/60 dark:odd:bg-gray-800 dark:even:bg-gray-800/60 hover:bg-indigo-50/60 dark:hover:bg-gray-700/50 transition">
 
                                     {{-- Student (avatar + name) --}}
                                     <td class="px-6 py-4">
@@ -123,7 +158,7 @@
 
                                     <td class="px-6 py-4">
                                         <span class="inline-flex px-2.5 py-1 rounded-full text-xs font-semibold {{ $badge }}">
-                                            {{ $detail->current_grade_level }}
+                                            {{ $detail->preferred_strand }}
                                         </span>
                                     </td>
 
@@ -163,7 +198,11 @@
                             @empty
                                 <tr>
                                     <td colspan="5" class="px-6 py-12 text-center text-gray-500 dark:text-gray-400">
-                                        Wala pang submissions.
+                                        @if (request('search'))
+                                            Walang nahanap para sa "<strong>{{ request('search') }}</strong>".
+                                        @else
+                                            Wala pang submissions.
+                                        @endif
                                     </td>
                                 </tr>
                             @endforelse
@@ -173,7 +212,10 @@
 
                 {{-- Footer --}}
                 <div class="px-6 py-4 border-t border-gray-200 dark:border-gray-700 text-sm text-gray-500 dark:text-gray-400">
-                    Total: {{ $details->count() }} {{ Str::plural('submission', $details->count()) }}
+                    Total: {{ $details->total() }} {{ Str::plural('submission', $details->total()) }}
+                </div>
+                <div class="px-6 py-4 border-t border-gray-200 dark:border-gray-700">
+                    {{ $details->links() }}
                 </div>
             </div>
 
