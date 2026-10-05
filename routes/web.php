@@ -18,12 +18,11 @@ Route::get('/collegetest', function () {
 });
 
 Route::get('/dashboard', function (Request $request) {
-    $abm = Detail::where('preferred_strand', 'ABM')->count();
-    $humss = Detail::where('preferred_strand', 'HUMSS')->count();    
-    $stem = Detail::where('preferred_strand', 'STEM')->count();    
-    $gas = Detail::where('preferred_strand', 'GAS')->count();
-    $ict_techpro = Detail::where('preferred_strand', 'ICT-TECHPRO')->count();
-    $tvl = Detail::where('preferred_strand', 'TVL')->count();
+    $bae = Detail::where('preferred_strand', 'BAE')->count();
+    $assh = Detail::where('preferred_strand', 'ASSH')->count();
+    $stem = Detail::where('preferred_strand', 'STEM')->count();
+    $techpro_ict = Detail::where('preferred_strand', 'TECHPRO_ict')->count();
+    $techpro_ht = Detail::where('preferred_strand', 'TECHPRO_ht')->count();
 
 
 
@@ -42,7 +41,7 @@ Route::get('/dashboard', function (Request $request) {
         ->paginate(10)
         ->withQueryString();
 
-    return view('dashboard', compact('details', 'abm', 'humss', 'stem', 'gas', 'ict_techpro','tvl'));
+    return view('dashboard', compact('details', 'bae', 'assh', 'stem', 'techpro_ict', 'techpro_ht'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/dashboard2', function (Request $request) {
@@ -50,7 +49,7 @@ Route::get('/dashboard2', function (Request $request) {
     $bscs = Detail::where('preferred_strand', 'BSCS')->count();
     $act = Detail::where('preferred_strand', 'ACT')->count();
     $bsbahrm = Detail::where('preferred_strand', 'BSBA-HRM')->count();
-    $bsmm = Detail::where('preferred_strand', 'BSMM')->count();
+    $bsba_mm = Detail::where('preferred_strand', 'BSBA-MM')->count();
     $bsed = Detail::where('preferred_strand', 'BSED')->count();
     $beed = Detail::where('preferred_strand', 'BEED')->count();
     $abeng = Detail::where('preferred_strand', 'AB-ENG')->count();
@@ -76,7 +75,7 @@ Route::get('/dashboard2', function (Request $request) {
         ->paginate(10)
         ->withQueryString();
 
-    return view('collegedashboard', compact('details', 'bscs', 'act', 'bsbahrm', 'bsmm', 'bsed', 'beed', 'abeng', 'bshm', 'bstm', 'bspsy','bstm'));
+    return view('collegedashboard', compact('details', 'bscs', 'act', 'bsbahrm', 'bsba_mm', 'bsed', 'beed', 'abeng', 'bshm', 'bstm', 'bspsy','bstm'));
 })->middleware(['auth', 'verified'])->name('dashboard2');
 
 

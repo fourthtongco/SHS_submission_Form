@@ -71,8 +71,8 @@
                 </div>
 
                 <div class="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg p-5 border-l-4 border-indigo-500">
-                    <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">BSMM</p>
-                    <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $bsmm }}</p>
+                    <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">BSBA-MM</p>
+                    <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $bsba_mm }}</p>
                 </div>
 
                 <div class="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg p-5 border-l-4 border-fuchsia-500">
@@ -135,7 +135,7 @@
                                         'BSCS'     => 'bg-teal-100 text-teal-700 dark:bg-teal-900/40 dark:text-teal-300',
                                         'BSED'     => 'bg-cyan-100 text-cyan-700 dark:bg-cyan-900/40 dark:text-cyan-300',
                                         'BSHM'     => 'bg-orange-100 text-orange-700 dark:bg-orange-900/40 dark:text-orange-300',
-                                        'BSMM'     => 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300',
+                                        'BSBA-MM'     => 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300',
                                         'BSPSY'    => 'bg-fuchsia-100 text-fuchsia-700 dark:bg-fuchsia-900/40 dark:text-fuchsia-300',
                                         'BSTM'     => 'bg-sky-100 text-sky-700 dark:bg-sky-900/40 dark:text-sky-300',
                                         default    => 'bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300',

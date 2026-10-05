@@ -13,8 +13,8 @@ class DetailSeeder extends Seeder
     {
         $faker = Faker::create();
 
-        $strands = ['STEM', 'ABM', 'HUMSS', 'GAS', 'TVL','ICT-TECHPRO'];
-        $programs = ['AB-ENG','ACT','BEED', 'BSBA-HRM','BSCS','BSED','BSHM','BSMM' ,'BSPSY','BSTM'];
+        $strands = ['STEM', 'BAE', 'ASSH','TECHPRO_ict','TECHPRO_ht'];
+        $programs = ['AB-ENG','ACT','BEED', 'BSBA-HRM','BSCS','BSED','BSHM','BSBA-MM' ,'BSPSY','BSTM'];
 
         // 50 SHS records (grade_level_code = 1)
         for ($i = 0; $i < 100; $i++) {

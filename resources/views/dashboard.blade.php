@@ -41,28 +41,25 @@
                 </div>
 
                 <div class="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg p-5 border-l-4 border-emerald-500">
-                    <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">ABM</p>
-                    <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $abm }}</p>
+                    <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">BAE</p>
+                    <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $bae }}</p>
                 </div>
 
                 <div class="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg p-5 border-l-4 border-amber-500">
-                    <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">HUMSS</p>
-                    <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $humss }}</p>
+                    <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">ASSH</p>
+                    <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $assh }}</p>
                 </div>
 
-                <div class="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg p-5 border-l-4 border-rose-500">
-                    <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">GAS</p>
-                    <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $gas }}</p>
-                </div>
+                
 
                 <div class="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg p-5 border-l-4 border-violet-500">
-                    <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">ICT-TECHPRO</p>
-                    <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $ict_techpro }}</p>
+                    <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">TECHPRO-ICT</p>
+                    <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $techpro_ict }}</p>
                 </div>
 
                 <div class="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg p-5 border-l-4 border-pink-500">
-                    <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">TVL</p>
-                    <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $tvl }}</p>
+                    <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">TECHPRO-HT</p>
+                    <p class="text-2xl font-bold text-gray-900 dark:text-gray-100">{{ $techpro_ht }}</p>
                 </div>
             </div>
 
@@ -111,10 +108,10 @@
 
                                     $badge = match ($detail->preferred_strand) {
                                         'STEM'  => 'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300',
-                                        'ABM'   => 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300',
-                                        'HUMSS' => 'bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300',
-                                        'GAS'   => 'bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300',
-                                        'TVL'   => 'bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-300',
+                                        'BAE'   => 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300',
+                                        'ASSH' => 'bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300',
+                                        'TECHPRO_ict'   => 'bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300',
+                                        'TECHPRO_ht'   => 'bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-300',
                                         default => 'bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300',
                                     };
                                 @endphp
