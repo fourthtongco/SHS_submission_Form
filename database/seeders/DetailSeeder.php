@@ -13,11 +13,11 @@ class DetailSeeder extends Seeder
     {
         $faker = Faker::create();
 
-        $strands = ['STEM', 'ABM', 'HUMSS', 'GAS', 'TVL'];
-        $programs = ['BSTM', 'BSHM', 'BSBA', 'BSCS'];
+        $strands = ['STEM', 'ABM', 'HUMSS', 'GAS', 'TVL','ICT-TECHPRO'];
+        $programs = ['AB-ENG','ACT','BEED', 'BSBA-HRM','BSCS','BSED','BSHM','BSMM' ,'BSPSY','BSTM'];
 
         // 50 SHS records (grade_level_code = 1)
-        for ($i = 0; $i < 50; $i++) {
+        for ($i = 0; $i < 100; $i++) {
             Detail::create([
                 'current_grade_level'  => $faker->randomElement(['Grade 10', 'Grade 11']),
                 'incoming_grade_level' => $faker->randomElement(['Grade 11', 'Grade 12']),
@@ -32,7 +32,7 @@ class DetailSeeder extends Seeder
         }
 
         // 50 College records (grade_level_code = 2)
-        for ($i = 0; $i < 50; $i++) {
+        for ($i = 0; $i < 100; $i++) {
             Detail::create([
                 'current_grade_level'  => $faker->randomElement(['Freshman', '2nd Year', '3rd Year']),
                 'incoming_grade_level' => $faker->randomElement(['2nd Year', '3rd Year', '4th Year']),

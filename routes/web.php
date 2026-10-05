@@ -10,6 +10,13 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::get('/shstest', function () {
+    return view('public.shs-form');
+});
+Route::get('/collegetest', function () {
+    return view('public.college-form');
+});
+
 Route::get('/dashboard', function (Request $request) {
     $abm = Detail::where('preferred_strand', 'ABM')->count();
     $humss = Detail::where('preferred_strand', 'HUMSS')->count();    
@@ -32,7 +39,7 @@ Route::get('/dashboard', function (Request $request) {
             });
         })
         ->latest()
-        ->paginate(5)
+        ->paginate(10)
         ->withQueryString();
 
     return view('dashboard', compact('details', 'abm', 'humss', 'stem', 'gas', 'ict_techpro','tvl'));
@@ -66,7 +73,7 @@ Route::get('/dashboard2', function (Request $request) {
             });
         })
         ->latest()
-        ->paginate(5)
+        ->paginate(10)
         ->withQueryString();
 
     return view('collegedashboard', compact('details', 'bscs', 'act', 'bsbahrm', 'bsmm', 'bsed', 'beed', 'abeng', 'bshm', 'bstm', 'bspsy','bstm'));
