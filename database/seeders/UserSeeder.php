@@ -24,5 +24,14 @@ class UserSeeder extends Seeder
                 'email_verified_at' => now(), // para hindi hingan ng email verification
             ]
         );
+
+         User::updateOrCreate(
+            ['email' => 'monica.adriano@olopsc.edu.ph'], // pang-check kung existing na
+            [
+                'name' => 'Monica Adriano',
+                'password' => Hash::make('12345678'),
+                'email_verified_at' => now(), // para hindi hingan ng email verification
+            ]
+        );
     }
 }

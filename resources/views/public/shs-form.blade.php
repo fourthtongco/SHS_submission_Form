@@ -54,7 +54,6 @@
                 <select id="current_grade_level" name="current_grade_level" required
                     class="mt-3 block w-full border-0 border-b-2 border-gray-300 focus:border-[#1d4596] focus:ring-0 px-0 py-2 bg-transparent">
                     <option value="">Choose</option>
-                    <option>Grade 9</option>
                     <option>Grade 10</option>
                     <option>Grade 11</option>
                 </select>
@@ -68,7 +67,7 @@
                 <select id="incoming_grade_level" name="incoming_grade_level" required
                     class="mt-3 block w-full border-0 border-b-2 border-gray-300 focus:border-[#1d4596] focus:ring-0 px-0 py-2 bg-transparent">
                     <option value="">Choose</option>
-                    <option>Grade 10</option>
+
                     <option>Grade 11</option>
                     <option>Grade 12</option>
                 </select>
@@ -107,7 +106,7 @@
                     Preferred Strand <span class="text-[#b9870a]">*</span>
                 </label>
                 <div class="space-y-2">
-                    @foreach (['STEM', 'ABM', 'HUMSS', 'GAS', 'TVL'] as $strand)
+                    @foreach (['STEM', 'BAE', 'ASSH', 'TECHPRO_ict', 'TECHPRO_ht'] as $strand)
                         <label class="flex items-center gap-3 cursor-pointer">
                             <input type="radio" name="preferred_strand" value="{{ $strand }}" required
                                 class="w-4 h-4 text-[#1d4596] border-gray-400 focus:ring-[#1d4596]">
