@@ -18,9 +18,31 @@ class DetailController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        
+      $values = $request->validate([
+            
+            'current_grade_level' => 'required|string',
+            'incoming_grade_level' => 'required|string',
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'middle_name' => 'nullable|string|max:255',
+            'preferred_strand' => 'required|string|max:255',
+            'contact_number' => 'required|string|max:20',
+            'email' => 'required|email|max:255',
+            'grade_level_code' => 'required|string'
+        ]);
+
+        if($values['grade_level_code'] == '1'){
+            Detail::create($values);
+            return redirect()->route('shsform')->with('success', 'Student applicant information has been successfully submitted and recorded. Thank you!
+');
+        }
+        else if($values['grade_level_code'] == '2'){
+            Detail::create();
+            return redirect()->route('collegeform')->with('success', 'Form submitted successfully!');
+        }
+  
     }
 
     /**

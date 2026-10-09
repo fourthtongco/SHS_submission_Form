@@ -42,7 +42,7 @@
             </div>
         @endif
 
-        <form action="/form_submission" method="POST">
+        <form action="{{ route('public_submission') }}" method="POST">
             @csrf
             <input type="hidden" name="grade_level_code" value="2">
 

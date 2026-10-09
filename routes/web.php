@@ -12,10 +12,12 @@ Route::get('/', function () {
 
 Route::get('/shstest', function () {
     return view('public.shs-form');
-});
+})->name('shsform');
+
+Route::post('/public_submission', [DetailController::class, 'create'])->name('public_submission');
 Route::get('/collegetest', function () {
     return view('public.college-form');
-});
+})->name('collegeform');
 
 Route::get('/dashboard', function (Request $request) {
     $bae = Detail::where('preferred_strand', 'BAE')->count();
