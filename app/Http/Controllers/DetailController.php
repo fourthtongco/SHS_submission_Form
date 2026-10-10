@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SubmissionConfirmation;
 use App\Models\Detail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class DetailController extends Controller
 {
@@ -28,18 +30,20 @@ class DetailController extends Controller
             'last_name' => 'required|string|max:255',
             'middle_name' => 'nullable|string|max:255',
             'preferred_strand' => 'required|string|max:255',
-            'contact_number' => 'required|string|max:20',
+            'contact_number' => [ 'required','string','regex:/^(09\d{9}|\+639\d{9})$/',],
             'email' => 'required|email|max:255',
             'grade_level_code' => 'required|string'
         ]);
 
         if($values['grade_level_code'] == '1'){
-            Detail::create($values);
+             $detail = Detail::create($values);
+            Mail::to($detail->email)->send(new SubmissionConfirmation($detail));
             return redirect()->route('shsform')->with('success', 'Student applicant information has been successfully submitted and recorded. Thank you!
 ');
         }
         else if($values['grade_level_code'] == '2'){
-            Detail::create();
+            $detail = Detail::create($values);
+            Mail::to($detail->email)->send(new SubmissionConfirmation($detail));
             return redirect()->route('collegeform')->with('success', 'Form submitted successfully!');
         }
   

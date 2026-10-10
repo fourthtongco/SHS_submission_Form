@@ -1,4 +1,4 @@
 ✅
-
-1). View page for shs and college
-2). Edit for shs and college
+❌
+1). View page for shs and college✅
+2). Edit for shs and college❌
