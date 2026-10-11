@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>College Inquiry Form</title>
+     <link rel="icon" type="image/png" href="{{ asset('images/olopsc2.png') }}">
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700&display=swap" rel="stylesheet" />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -16,7 +17,7 @@
         <div class="bg-white rounded-lg shadow-sm overflow-hidden mb-4">
             <div class="h-3 bg-teal-600"></div>
             <div class="p-6 sm:p-8">
-                <h1 class="text-2xl font-bold text-gray-900">College Inquiry Form</h1>
+                <h1 class="text-2xl font-bold text-gray-900">OLOPSC College Inquiry Form</h1>
                 <p class="mt-2 text-sm text-gray-600 leading-relaxed">
                     Thank you for visiting our school! Please fill out this short form so we can reach out
                     with more information about our College programs.
@@ -110,14 +111,67 @@
                 <label class="block font-medium text-gray-900 mb-3">
                     Preferred Program <span class="text-red-500">*</span>
                 </label>
+               
                 <div class="space-y-2">
-                    @foreach (['BSTM', 'BSCS', 'BSHM', 'BSBA'] as $program)
-                        <label class="flex items-center gap-3 cursor-pointer">
-                            <input type="radio" name="preferred_strand" value="{{ $program }}" required
-                                class="w-4 h-4 text-teal-600 border-gray-400 focus:ring-teal-500">
-                            <span class="text-gray-800 text-sm">{{ $program }}</span>
-                        </label>
-                    @endforeach
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="radio" name="preferred_strand" value="AB-ENG" required
+                            class="w-4 h-4 text-teal-600 border-gray-400 focus:ring-teal-500">
+                        <span class="text-gray-800 text-sm">AB-ENG</span>
+                    </label>
+
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="radio" name="preferred_strand" value="ACT" required
+                            class="w-4 h-4 text-teal-600 border-gray-400 focus:ring-teal-500">
+                        <span class="text-gray-800 text-sm">ACT</span>
+                    </label>
+
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="radio" name="preferred_strand" value="BEED" required
+                            class="w-4 h-4 text-teal-600 border-gray-400 focus:ring-teal-500">
+                        <span class="text-gray-800 text-sm">BEED</span>
+                    </label>
+
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="radio" name="preferred_strand" value="BSBA-HRM" required
+                            class="w-4 h-4 text-teal-600 border-gray-400 focus:ring-teal-500">
+                        <span class="text-gray-800 text-sm">BSBA-HRM</span>
+                    </label>
+
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="radio" name="preferred_strand" value="BSCS" required
+                            class="w-4 h-4 text-teal-600 border-gray-400 focus:ring-teal-500">
+                        <span class="text-gray-800 text-sm">BSCS</span>
+                    </label>
+
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="radio" name="preferred_strand" value="BSED" required
+                            class="w-4 h-4 text-teal-600 border-gray-400 focus:ring-teal-500">
+                        <span class="text-gray-800 text-sm">BSED</span>
+                    </label>
+
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="radio" name="preferred_strand" value="BSHM" required
+                            class="w-4 h-4 text-teal-600 border-gray-400 focus:ring-teal-500">
+                        <span class="text-gray-800 text-sm">BSHM</span>
+                    </label>
+
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="radio" name="preferred_strand" value="BSBA-MM" required
+                            class="w-4 h-4 text-teal-600 border-gray-400 focus:ring-teal-500">
+                        <span class="text-gray-800 text-sm">BSBA-MM</span>
+                    </label>
+
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="radio" name="preferred_strand" value="BSPSY" required
+                            class="w-4 h-4 text-teal-600 border-gray-400 focus:ring-teal-500">
+                        <span class="text-gray-800 text-sm">BSPSY</span>
+                    </label>
+
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="radio" name="preferred_strand" value="BSTM" required
+                            class="w-4 h-4 text-teal-600 border-gray-400 focus:ring-teal-500">
+                        <span class="text-gray-800 text-sm">BSTM</span>
+                    </label>
                 </div>
             </div>
 
