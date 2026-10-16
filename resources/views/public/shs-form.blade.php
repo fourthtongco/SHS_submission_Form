@@ -79,7 +79,7 @@
                 <label for="first_name" class="block font-medium text-gray-900">
                     First Name <span class="text-[#b9870a]">*</span>
                 </label>
-                <input id="first_name" name="first_name" type="text" required placeholder="Your answer"
+                <input id="first_name" name="first_name" value="{{ old('first_name') }}" type="text" required placeholder="Your answer"
                     class="mt-3 block w-full border-0 border-b-2 border-gray-300 focus:border-[#1d4596] focus:ring-0 px-0 py-2 bg-transparent placeholder-gray-400">
             </div>
 
@@ -88,7 +88,7 @@
                 <label for="middle_name" class="block font-medium text-gray-900">
                     Middle Name
                 </label>
-                <input id="middle_name" name="middle_name" type="text" placeholder="Your answer"
+                <input id="middle_name" name="middle_name" value="{{ old('middle_name') }}" type="text" placeholder="Your answer"
                     class="mt-3 block w-full border-0 border-b-2 border-gray-300 focus:border-[#1d4596] focus:ring-0 px-0 py-2 bg-transparent placeholder-gray-400">
             </div>
 
@@ -97,7 +97,7 @@
                 <label for="last_name" class="block font-medium text-gray-900">
                     Last Name <span class="text-[#b9870a]">*</span>
                 </label>
-                <input id="last_name" name="last_name" type="text" required placeholder="Your answer"
+                <input id="last_name" name="last_name" value="{{ old('last_name') }}" type="text" required placeholder="Your answer"
                     class="mt-3 block w-full border-0 border-b-2 border-gray-300 focus:border-[#1d4596] focus:ring-0 px-0 py-2 bg-transparent placeholder-gray-400">
             </div>
 
@@ -106,12 +106,33 @@
                 <label class="block font-medium text-gray-900 mb-3">
                     Preferred Strand <span class="text-[#b9870a]">*</span>
                 </label>
-                <div class="space-y-2">
-                    @foreach (['STEM', 'BAE', 'ASSH', 'TECHPRO_ict', 'TECHPRO_ht'] as $strand)
-                        <label class="flex items-center gap-3 cursor-pointer">
-                            <input type="radio" name="preferred_strand" value="{{ $strand }}" required
-                                class="w-4 h-4 text-[#1d4596] border-gray-400 focus:ring-[#1d4596]">
-                            <span class="text-gray-800 text-sm">{{ $strand }}</span>
+
+                @php
+                    $strands = [
+                        'STEM' => 'Science, Technology, Engineering, and Mathematics',
+                        'BAE' => 'Business and Accountancy Education',
+                        'ASSH' => 'Arts, Social Sciences, and Humanities',
+                        'TECHPRO_ict' => 'Technical Professional - Information and Communications Technology',
+                        'TECHPRO_ht' => 'Technical Professional - Hospitality and Tourism',
+                    ];
+                @endphp
+
+                <div class="space-y-3">
+                    @foreach ($strands as $acronym => $meaning)
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input
+                                type="radio"
+                                name="preferred_strand"
+                                value="{{ $acronym }}"
+                                {{ old('preferred_strand') === $acronym ? 'checked' : '' }}
+                                required
+                                class="mt-1 w-4 h-4 text-[#1d4596] border-gray-400 focus:ring-[#1d4596]"
+                            >
+
+                            <span class="text-gray-800 text-sm">
+                                <span class="font-semibold">{{ $acronym }}</span>
+                                <span class="block text-gray-500">{{ $meaning }}</span>
+                            </span>
                         </label>
                     @endforeach
                 </div>

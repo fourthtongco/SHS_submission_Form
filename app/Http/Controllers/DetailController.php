@@ -85,7 +85,12 @@ class DetailController extends Controller
      */
     public function edit(Detail $detail)
     {
-        //
+         return view('update.view', compact('detail'));
+    }
+
+      public function edit1(Detail $detail)
+    {
+         return view('update.view2', compact('detail'));
     }
 
     /**
@@ -93,7 +98,22 @@ class DetailController extends Controller
      */
     public function update(Request $request, Detail $detail)
     {
-        //
+
+        $values = $request->validate([
+            
+            'current_grade_level' => 'required|string',
+            'incoming_grade_level' => 'required|string',
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'middle_name' => 'nullable|string|max:255',
+            'preferred_strand' => 'required|string|max:255',
+            'contact_number' => 'required|string|max:20',
+            'email' => 'required|email|max:255',
+            'grade_level_code' => 'required|string'
+        ]);
+
+        $detail->update($values);
+        return redirect()->back();
     }
 
     /**

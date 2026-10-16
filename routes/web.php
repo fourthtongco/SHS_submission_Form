@@ -99,13 +99,25 @@ Route::middleware('auth')->group(function () {
         return view('submission.index2');
     })->middleware(['auth', 'verified'])->name('index2');
 
-    Route::put('/submissions/{detail}', [DetailController::class, 'edit'])
+
+
+
+    Route::put('/submissions/{detail}', [DetailController::class, 'update'])
     ->middleware(['auth', 'verified'])
     ->name('edit');
 
       Route::get('/submissions/{detail}', [DetailController::class, 'show'])
     ->middleware(['auth', 'verified'])
     ->name('view');
+
+
+      Route::get('/edit/{detail}', [DetailController::class, 'edit'])
+    ->middleware(['auth', 'verified'])
+    ->name('editview');
+
+        Route::get('/edit2/{detail}', [DetailController::class, 'edit1'])
+    ->middleware(['auth', 'verified'])
+    ->name('editview2');
 
 
 

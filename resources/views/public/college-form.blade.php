@@ -84,7 +84,7 @@
                 <label for="first_name" class="block font-medium text-gray-900">
                     First Name <span class="text-red-500">*</span>
                 </label>
-                <input id="first_name" name="first_name" type="text" required placeholder="Your answer"
+                <input id="first_name" name="first_name" type="text" value="{{ old('first_name') }}" required placeholder="Your answer"
                     class="mt-3 block w-full border-0 border-b-2 border-gray-300 focus:border-teal-600 focus:ring-0 px-0 py-2 bg-transparent placeholder-gray-400">
             </div>
 
@@ -93,7 +93,7 @@
                 <label for="middle_name" class="block font-medium text-gray-900">
                     Middle Name
                 </label>
-                <input id="middle_name" name="middle_name" type="text" placeholder="Your answer"
+                <input id="middle_name" name="middle_name" type="text" value="{{ old('middle_name') }}" placeholder="Your answer"
                     class="mt-3 block w-full border-0 border-b-2 border-gray-300 focus:border-teal-600 focus:ring-0 px-0 py-2 bg-transparent placeholder-gray-400">
             </div>
 
@@ -102,7 +102,7 @@
                 <label for="last_name" class="block font-medium text-gray-900">
                     Last Name <span class="text-red-500">*</span>
                 </label>
-                <input id="last_name" name="last_name" type="text" required placeholder="Your answer"
+                <input id="last_name" name="last_name" type="text" value="{{ old('last_name') }}" required placeholder="Your answer"
                     class="mt-3 block w-full border-0 border-b-2 border-gray-300 focus:border-teal-600 focus:ring-0 px-0 py-2 bg-transparent placeholder-gray-400">
             </div>
 
@@ -111,68 +111,46 @@
                 <label class="block font-medium text-gray-900 mb-3">
                     Preferred Program <span class="text-red-500">*</span>
                 </label>
-               
-                <div class="space-y-2">
-                    <label class="flex items-center gap-3 cursor-pointer">
-                        <input type="radio" name="preferred_strand" value="AB-ENG" required
-                            class="w-4 h-4 text-teal-600 border-gray-400 focus:ring-teal-500">
-                        <span class="text-gray-800 text-sm">AB-ENG</span>
-                    </label>
+                
+                @php
+                    $strands = [
+                        'AB-ENG' => 'Bachelor of Arts in English Language',
+                        'ACT' => 'Associate in Computer Technology',
+                        'BEED' => 'Bachelor of Elementary Education',
+                        'BSBA-HRM' => 'Bachelor of Science in Business Administration - Human Resource Management',
+                        'BSCS' => 'Bachelor of Science in Computer Science',
+                        'BSED' => 'Bachelor of Science in Elementary Education',
+                        'BSHM' => 'Bachelor of Science in Hospitality Management',
+                        'BSBA-MM' => 'Technical Professional - Hospitality and Tourism',
+                        'BSPSY' => 'Bachelor of Science in Psychology',
+                        'BSTM' => 'Bachelor of Science in Tourism Management',
+                        
+                    ];
+                @endphp
 
-                    <label class="flex items-center gap-3 cursor-pointer">
-                        <input type="radio" name="preferred_strand" value="ACT" required
-                            class="w-4 h-4 text-teal-600 border-gray-400 focus:ring-teal-500">
-                        <span class="text-gray-800 text-sm">ACT</span>
-                    </label>
+                <div class="space-y-3">
+                    @foreach ($strands as $acronym => $meaning)
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input
+                                type="radio"
+                                name="preferred_strand"
+                                value="{{ $acronym }}"
+                                {{ old('preferred_strand') === $acronym ? 'checked' : '' }}
+                                required
+                                class="mt-1 w-4 h-4 text-[#1d4596] border-gray-400 focus:ring-[#1d4596]"
+                            >
 
-                    <label class="flex items-center gap-3 cursor-pointer">
-                        <input type="radio" name="preferred_strand" value="BEED" required
-                            class="w-4 h-4 text-teal-600 border-gray-400 focus:ring-teal-500">
-                        <span class="text-gray-800 text-sm">BEED</span>
-                    </label>
-
-                    <label class="flex items-center gap-3 cursor-pointer">
-                        <input type="radio" name="preferred_strand" value="BSBA-HRM" required
-                            class="w-4 h-4 text-teal-600 border-gray-400 focus:ring-teal-500">
-                        <span class="text-gray-800 text-sm">BSBA-HRM</span>
-                    </label>
-
-                    <label class="flex items-center gap-3 cursor-pointer">
-                        <input type="radio" name="preferred_strand" value="BSCS" required
-                            class="w-4 h-4 text-teal-600 border-gray-400 focus:ring-teal-500">
-                        <span class="text-gray-800 text-sm">BSCS</span>
-                    </label>
-
-                    <label class="flex items-center gap-3 cursor-pointer">
-                        <input type="radio" name="preferred_strand" value="BSED" required
-                            class="w-4 h-4 text-teal-600 border-gray-400 focus:ring-teal-500">
-                        <span class="text-gray-800 text-sm">BSED</span>
-                    </label>
-
-                    <label class="flex items-center gap-3 cursor-pointer">
-                        <input type="radio" name="preferred_strand" value="BSHM" required
-                            class="w-4 h-4 text-teal-600 border-gray-400 focus:ring-teal-500">
-                        <span class="text-gray-800 text-sm">BSHM</span>
-                    </label>
-
-                    <label class="flex items-center gap-3 cursor-pointer">
-                        <input type="radio" name="preferred_strand" value="BSBA-MM" required
-                            class="w-4 h-4 text-teal-600 border-gray-400 focus:ring-teal-500">
-                        <span class="text-gray-800 text-sm">BSBA-MM</span>
-                    </label>
-
-                    <label class="flex items-center gap-3 cursor-pointer">
-                        <input type="radio" name="preferred_strand" value="BSPSY" required
-                            class="w-4 h-4 text-teal-600 border-gray-400 focus:ring-teal-500">
-                        <span class="text-gray-800 text-sm">BSPSY</span>
-                    </label>
-
-                    <label class="flex items-center gap-3 cursor-pointer">
-                        <input type="radio" name="preferred_strand" value="BSTM" required
-                            class="w-4 h-4 text-teal-600 border-gray-400 focus:ring-teal-500">
-                        <span class="text-gray-800 text-sm">BSTM</span>
-                    </label>
+                            <span class="text-gray-800 text-sm">
+                                <span class="font-semibold">{{ $acronym }}</span>
+                                <span class="block text-gray-500">{{ $meaning }}</span>
+                            </span>
+                        </label>
+                    @endforeach
                 </div>
+
+
+               
+                
             </div>
 
             {{-- Contact number --}}
@@ -180,7 +158,7 @@
                 <label for="contact_number" class="block font-medium text-gray-900">
                     Contact Number <span class="text-red-500">*</span>
                 </label>
-                <input id="contact_number" name="contact_number" type="tel" required placeholder="09XX XXX XXXX"
+                <input id="contact_number" name="contact_number" type="tel" value="{{ old('contact_number') }}" required placeholder="09XX XXX XXXX"
                     class="mt-3 block w-full border-0 border-b-2 border-gray-300 focus:border-teal-600 focus:ring-0 px-0 py-2 bg-transparent placeholder-gray-400">
             </div>
 
@@ -189,7 +167,7 @@
                 <label for="email" class="block font-medium text-gray-900">
                     Email Address <span class="text-red-500">*</span>
                 </label>
-                <input id="email" name="email" type="email" required placeholder="your@email.com"
+                <input id="email" name="email" type="email" value="{{ old('email') }}" required placeholder="your@email.com"
                     class="mt-3 block w-full border-0 border-b-2 border-gray-300 focus:border-teal-600 focus:ring-0 px-0 py-2 bg-transparent placeholder-gray-400">
             </div>
 
